@@ -10,7 +10,7 @@ export const accessTokenOptions = {
   maxAge: accessTokenMaxAge,
   httpOnly: true,
   secure: true, // Must be true in production (for HTTPS)
-  sameSite: "lax", // Use 'lax' for cross-site requests
+  sameSite: "none", // Use 'lax' for cross-site requests
   path: "/",
 };
 
