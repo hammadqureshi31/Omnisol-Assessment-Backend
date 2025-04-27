@@ -13,7 +13,7 @@ const refreshTokenMaxAge = 240 * 60 * 60 * 1000; // 10 days in milliseconds
 export const accessTokenOptions = {
   maxAge: accessTokenMaxAge,
   httpOnly: true,
-  secure: true, // Must be true in production (for HTTPS)
+  secure: false, // Must be true in production (for HTTPS)
   sameSite: "lax", // Use 'lax' for cross-site requests
   path: "/",
 };
@@ -21,7 +21,7 @@ export const accessTokenOptions = {
 export const refreshTokenOptions = {
   maxAge: refreshTokenMaxAge,
   httpOnly: true,
-  secure: true, // Must be true in production (for HTTPS)
+  secure: false, // Must be true in production (for HTTPS)
   sameSite: "lax", // Use 'lax' for cross-site requests
   path: "/",
 };
@@ -159,6 +159,7 @@ export async function handleSignOutUser(req, res) {
 
 export async function handleCheckIsUserLoggedIn(req, res) {
   const accessToken = req.cookies.accessToken;
+  console.log("accessToken",accessToken)
 
   if (!accessToken) {
     return res.status(401).send("Access token missing");

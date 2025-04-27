@@ -11,8 +11,8 @@ export const verifyUser = async (req, res, next) => {
   try {
     const access = req.cookies.accessToken;
     const refresh = req.cookies.refreshToken;
-    // console.log("Access Token:", access);
-    // console.log("Refresh Token:", refresh);
+    console.log("Access Token:", access);
+    console.log("Refresh Token:", refresh);
 
     if (!access && !refresh) {
       return res.status(401).send("UnAuthorized request..");
