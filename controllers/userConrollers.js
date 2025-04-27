@@ -2,7 +2,6 @@ import { User } from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-}
 
 const accessTokenMaxAge = 24 * 60 * 60 * 1000; // 1 day in milliseconds
 const refreshTokenMaxAge = 240 * 60 * 60 * 1000; // 10 days in milliseconds
