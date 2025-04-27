@@ -50,7 +50,7 @@ export const createNote = async (req, res) => {
 
 export const fetchNotes = async (req, res) => {
   const { page = 0 } = req.query;
-  const limit = 6;
+  const limit = 8;
 
   try {
     const totalCount = await Note.countDocuments();
