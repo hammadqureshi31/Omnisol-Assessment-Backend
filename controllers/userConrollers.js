@@ -2,9 +2,6 @@ import { User } from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-
-export async function handleTestUser(req, res) {
-  await res.send("Welcome to Dawn 2 Dusk Blog Website..");
 }
 
 const accessTokenMaxAge = 24 * 60 * 60 * 1000; // 1 day in milliseconds
@@ -13,7 +10,7 @@ const refreshTokenMaxAge = 240 * 60 * 60 * 1000; // 10 days in milliseconds
 export const accessTokenOptions = {
   maxAge: accessTokenMaxAge,
   httpOnly: true,
-  secure: false, // Must be true in production (for HTTPS)
+  secure: true, // Must be true in production (for HTTPS)
   sameSite: "lax", // Use 'lax' for cross-site requests
   path: "/",
 };
@@ -21,7 +18,7 @@ export const accessTokenOptions = {
 export const refreshTokenOptions = {
   maxAge: refreshTokenMaxAge,
   httpOnly: true,
-  secure: false, // Must be true in production (for HTTPS)
+  secure: true, // Must be true in production (for HTTPS)
   sameSite: "lax", // Use 'lax' for cross-site requests
   path: "/",
 };
