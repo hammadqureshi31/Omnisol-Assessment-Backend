@@ -13,7 +13,7 @@ const refreshTokenMaxAge = 240 * 60 * 60 * 1000; // 10 days in milliseconds
 export const accessTokenOptions = {
   maxAge: accessTokenMaxAge,
   httpOnly: true,
-  secure: false, // Must be true in production (for HTTPS)
+  secure: true, // Must be true in production (for HTTPS)
   sameSite: "lax", // Use 'lax' for cross-site requests
   path: "/",
 };
@@ -21,7 +21,7 @@ export const accessTokenOptions = {
 export const refreshTokenOptions = {
   maxAge: refreshTokenMaxAge,
   httpOnly: true,
-  secure: false, // Must be true in production (for HTTPS)
+  secure: true, // Must be true in production (for HTTPS)
   sameSite: "lax", // Use 'lax' for cross-site requests
   path: "/",
 };

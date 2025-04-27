@@ -15,7 +15,7 @@ app.use(urlencoded({extended: false}));
 app.use(cookieParser());
 
 
-const allowedorigins = ["http://localhost:5173", "http://localhost:5173/user/signup"];
+const allowedorigins = ["https://omni-sol-assessment-frontend.vercel.app", "https://omni-sol-assessment-frontend.vercel.app/user/signup"];
 
 app.use(
   cors({
